@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+body {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 100px;
+  text-align: center;
+}
+</style>
+<body>
+    <div id="shadow">
+      <span class="content1">content1 text!!!</span>
+      <span class="content2">content2 text!!!</span>
+    </div>
+    <template id="template">
+      <style>
+        :host { text-transform: uppercase; }
+        :host{ color: red;}
+      </style>
+      <div>
+        content1: <content select=".content1"></content><br/>
+        content2: <content select=".content2"></content><br/>
+      </div>
+    </template>
+</body>
+<script>
+  var shadow = document.getElementById('shadow').createShadowRoot();
+  let template = document.getElementById('template');
+  console.log(shadow, template.content)
+  shadow.appendChild(document.importNode(template.content, true))
+</script>
+</html>

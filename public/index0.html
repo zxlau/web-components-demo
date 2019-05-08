@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+body {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 100px;
+  text-align: center;
+}
+hello-button {
+  background: #77A2DC;
+  padding: 7px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+</style>
+<body>
+    <hello-button>hello</hello-button>
+    <template id="tempalte-text">
+        <span>template text!</span>
+    </template>
+  
+</body>
+<script>
+
+(function() {
+  var HelloButtonPrototype = Object.create(HTMLElement.prototype);
+  HelloButtonPrototype.who = function() {
+      alert('Hello!');
+  }
+  HelloButtonPrototype.createdCallback = function() {
+      this.addEventListener('click', function(e) {
+          HelloButtonPrototype.who();
+      });
+      // this.innerHTML = 'I am hello button'
+
+      // let template = document.getElementById('tempalte-text');
+      // let clone = document.importNode(template.content, true);
+      // this.appendChild(clone)
+  }
+  document.registerElement('hello-button', {prototype: HelloButtonPrototype});
+})();
+</script>
+</html>

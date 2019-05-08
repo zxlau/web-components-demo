@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>webcomponent</title>
+        <link rel="import" href="./components/helloworld.html" />
+        <script src="./components/GoTop.js"></script>
+        <script src="./components/ImgLink.js"></script>
+        <script src="./components/SlotTest.js"></script>
+    </head>
+    <style>
+        body {
+            width: 1200px;
+            margin: 0 auto;
+            padding-top: 100px;
+            text-align: center;
+        }
+        go-top {
+            padding: 10px;
+            background-color: #3cb357;
+            color: #fff;
+            border-radius: 4px;
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            cursor: pointer;
+        }
+        go-top:hover {
+            opacity: 0.9
+        }
+        slot-test ul {
+            list-style: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+    <body>
+        <hellow-world></hellow-world>
+        <!-- asdf<br/><br/><br/><br/><br/>
+        asdf<br/><br/><br/><br/><br/>
+        asdf<br/><br/><br/><br/><br/>
+        asdf<br/><br/><br/><br/><br/>
+        asdf<br/><br/><br/><br/><br/>
+        asdf<br/><br/><br/><br/<br/><br/><br/><br/>><br/>
+        asdf<br/><br/><br/><br/<br/><br/><br/><br/>><br/>
+        asdf<br/><br/><br/><br/<br/><br/><br/><br/>><br/>
+        asdf<br/><br/><br/><br/<br/><br/><br/><br/>><br/>
+        asdf<br/><br/><br/><br/<br/><br/><br/><br/>><br/>
+        asdf<br/><br/><br/><br/<br/><br/><br/><br/>><br/>
+        asdf<br/><br/><br/><br/><br/>
+        asdf<br/><br/><br/><br/><br/>
+        asdf<br/><br/><br/><br/><br/>
+        asdf<br/><br/><br/><br/><br/> -->
+        <go-top data-name="GoTop">GoTop</go-top>
+        <br/>
+        <br/>
+        <br/>
+        <img-link width="100" height="100" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4621/javascript.png" url="http://www.w3school.com.cn/js/index.asp" name="javascript"></img-link>
+        <br/>
+        <br/>
+        <br/>
+        <slot-test>
+            <ul>
+                <li>home</li>
+                <li>order</li>
+                <li>about</li>
+            </ul>
+            <!-- <ul slot="menu">
+                <li>menu home</li>
+                <li>menu order</li>
+                <li>menu about</li>
+            </ul> -->
+        </slot-test>
+    </body>
+    <script>
+    </script>
+</html> 

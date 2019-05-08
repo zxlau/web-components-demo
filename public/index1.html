@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+body {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 100px;
+  text-align: center;
+}
+</style>
+<body>
+    <div id="shadow">shadow!</div>
+</body>
+<script>
+  var shadow = document.getElementById('shadow').createShadowRoot();
+  shadow.innerHTML =`<style>div { color: red; }</style><div>My name is <content></content></div>`;
+</script>
+</html>
